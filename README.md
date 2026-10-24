@@ -2,9 +2,6 @@
 **منظومة الترجمة السياقية والعصبية، والقاموس ثنائي الاتجاه، واستوديو المسح الضوئي البصري (OCR) لنظام ويندوز**  
 **Bilingual Contextual & Neural Translation Suite, Offline Lexicon & Visual OCR Studio for Windows 10/11**
 
-[Release](https://www.google.com/search?q=https://github.com/25164488-Mohammed/LinguaDeskPro/releases/tag/v7.0-latest)
-[Platform](https://www.google.com/search?q=https://github.com/25164488-Mohammed/LinguaDeskPro/releases)
-[Lexicon](https://www.google.com/search?q=https://github.com/25164488-Mohammed/LinguaDeskPro)
 [](mailto:mohammedalbukeer@gmail.com)
 
 **تصميم وهندسة وتطوير:** المهندس **محمد البكير (Mohammed Albukeer)**  
@@ -16,12 +13,11 @@
 
 ## التنزيل المباشر والتثبيت الفوري (Direct Download & Setup)
 
-يمكنك تنزيل الإصدار النهائي الجاهز مباشرة من قسم [الإصدارات (Releases)](https://www.google.com/search?q=https://github.com/25164488-Mohammed/LinguaDeskPro/releases/tag/v7.0-latest) في هذا المستودع:
 
 | اسم الملف التنفيذي | الوصف والاستخدام الموصى به |
 | :--- | :--- |
-| **[LinguaDeskPro\_Setup\_v7.0\_AllInOne.exe](https://www.google.com/search?q=https://github.com/25164488-Mohammed/LinguaDeskPro/releases/tag/v7.0-latest)** | **معالج التثبيت الرسمي الشامل (موصى به لجميع المستخدمين):** يثبّت التطبيق بكامل حزمه في النظام، وينشئ اختصاراً واحداً (`LinguaDesk Pro`) على سطح المكتب وفي قائمة «ابدأ»، ويدعم إلغاء التثبيت النظيف |
-| **[LinguaDeskPro\_v7.0\_SingleFile\_Portable.exe](https://www.google.com/search?q=https://github.com/25164488-Mohammed/LinguaDeskPro/releases/tag/v7.0-latest)** | **النسخة المحمولة الموحدة (Portable Single-File):** ملف `.exe` واحد فقط يعمل مباشرة بضغطة مزدوجة من أي مجلد أو ذاكرة USB دون الحاجة لمعالج تثبيت |
+| **[LinguaDeskPro\_Setup\_v7.0\_AllInOne.exe]* | **معالج التثبيت الرسمي الشامل (موصى به لجميع المستخدمين):** يثبّت التطبيق بكامل حزمه في النظام، وينشئ اختصاراً واحداً (`LinguaDesk Pro`) على سطح المكتب وفي قائمة «ابدأ»، ويدعم إلغاء التثبيت النظيف |
+| **[LinguaDeskPro\_v7.0\_SingleFile\_Portable.exe]** | **النسخة المحمولة الموحدة (Portable Single-File):** ملف `.exe` واحد فقط يعمل مباشرة بضغطة مزدوجة من أي مجلد أو ذاكرة USB دون الحاجة لمعالج تثبيت |
 
 ## المميزات الرئيسية في الإصدار السابع (Key Features in v7.0)
 
@@ -96,4 +92,3 @@ BUILD_SINGLE_EXE_LOCALLY.bat
 صُمم وطُوّر هذا المشروع بالكامل بواسطة:
 * **المهندس:** محمد البكير (**Mohammed Albukeer**)
 * **البريد الإلكتروني:** [mohammedalbukeer@gmail.com](mailto:mohammedalbukeer@gmail.com)
-* **المستودع الرسمي:** [github.com/25164488-Mohammed/LinguaDeskPro](https://www.google.com/search?q=https://github.com/25164488-Mohammed/LinguaDeskPro)
