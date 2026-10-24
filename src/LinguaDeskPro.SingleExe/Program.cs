@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
@@ -143,6 +143,28 @@ namespace LinguaDeskProHost
             ArToEn["كتاب"] = "book";
             ArToEn["قاموس"] = "dictionary";
             ArToEn["ترجمة"] = "translation";
+        }
+
+        public static void AddLexiconPair(string rawEn, string rawAr)
+        {
+            string en = (rawEn ?? "").Trim().ToLowerInvariant().TrimEnd('.', '!', '?');
+            string arPrimary = CleanPrimaryArabic((rawAr ?? "").Trim());
+            if (string.IsNullOrEmpty(en) || string.IsNullOrEmpty(arPrimary)) return;
+
+            if (en.Contains(" "))
+            {
+                if (!PhraseEnToAr.ContainsKey(en)) PhraseEnToAr[en] = arPrimary;
+            }
+            else
+            {
+                if (!EnToAr.ContainsKey(en)) EnToAr[en] = arPrimary;
+            }
+
+            string arUnvoc = StripTashkeel(arPrimary);
+            if (arUnvoc.Length >= 2 && !ArToEn.ContainsKey(arUnvoc))
+            {
+                ArToEn[arUnvoc] = en;
+            }
         }
 
         public static string CleanPrimaryArabic(string s)
@@ -476,9 +498,9 @@ namespace LinguaDeskProHost
             int btnY = 205;
             Button btnOpenMain = CreateButton("🖥 فتح ومزامنة بالتطبيق", new Point(14, btnY), new Size(140, 32), Color.FromArgb(217, 119, 6));
             btnOpenMain.Click += delegate {
-                LocalTcpHttpServer.LatestSyncedSource = txtSource.Text.Trim();
-                LocalTcpHttpServer.LatestSyncedTarget = txtTarget.Text.Trim();
-                LocalTcpHttpServer.SyncCounter++;
+                LocalTcpHttpServer.LatestOverlaySource = txtSource.Text.Trim();
+                LocalTcpHttpServer.LatestOverlayTarget = txtTarget.Text.Trim();
+                LocalTcpHttpServer.OverlaySyncSeq++;
                 LaunchStandaloneAppWindow();
             };
             this.Controls.Add(btnOpenMain);
@@ -723,7 +745,7 @@ namespace LinguaDeskProHost
                 LocalTcpHttpServer.LatestOverlayDir = OfflineLexiconEngine.ContainsArabic(text) ? "ar->en" : "en->ar";
                 LocalTcpHttpServer.OverlaySyncSeq++;
 
-                this.Invoke((MethodInvoker)delegate {
+                this.Invoke((System.Windows.Forms.MethodInvoker)delegate {
                     txtTarget.Text = finalResult;
                     lblStatus.Text = usedOnline
                         ? "✅ تمت الترجمة السحابية وحُفظت في القاموس المحلي وتزامنت مع التطبيق!"
@@ -1023,7 +1045,7 @@ namespace LinguaDeskProHost
                     }
                     if (path == "/api/show-overlay")
                     {
-                        try { overlayForm.Invoke((MethodInvoker)delegate { overlayForm.ShowFloatingOverlay(); }); } catch { }
+                        try { overlayForm.Invoke((System.Windows.Forms.MethodInvoker)delegate { overlayForm.ShowFloatingOverlay(); }); } catch { }
                         SendJson(ns, "{\"ok\":true}");
                         return;
                     }
@@ -1156,6 +1178,51 @@ namespace LinguaDeskProHost
             catch (Exception ex)
             {
                 SendJson(ns, "{\"ok\":false,\"error\":\"" + ex.Message.Replace("\"", "'").Replace("\\", "/") + "\"}");
+            }
+        }
+
+        private void ServeStaticFile(NetworkStream ns, string urlPath)
+        {
+            try
+            {
+                string cleanRel = Uri.UnescapeDataString(urlPath ?? "/").TrimStart('/');
+                if (string.IsNullOrEmpty(cleanRel) || cleanRel == "/") cleanRel = "index.html";
+                cleanRel = cleanRel.Replace('/', Path.DirectorySeparatorChar);
+                if (cleanRel.Contains(".."))
+                {
+                    SendResponse(ns, "403 Forbidden", "text/plain", new byte[0]);
+                    return;
+                }
+
+                string candidate1 = Path.Combine(Path.Combine(this.appRoot, "ui"), cleanRel);
+                string candidate2 = Path.Combine(this.appRoot, cleanRel);
+                string targetFile = File.Exists(candidate1) ? candidate1 : (File.Exists(candidate2) ? candidate2 : null);
+
+                if (targetFile == null)
+                {
+                    SendResponse(ns, "404 Not Found", "text/plain", new byte[0]);
+                    return;
+                }
+
+                string ext = Path.GetExtension(targetFile).ToLowerInvariant();
+                string mime = "application/octet-stream";
+                if (ext == ".html" || ext == ".htm") mime = "text/html; charset=utf-8";
+                else if (ext == ".js") mime = "application/javascript; charset=utf-8";
+                else if (ext == ".css") mime = "text/css; charset=utf-8";
+                else if (ext == ".json") mime = "application/json; charset=utf-8";
+                else if (ext == ".svg") mime = "image/svg+xml";
+                else if (ext == ".png") mime = "image/png";
+                else if (ext == ".jpg" || ext == ".jpeg") mime = "image/jpeg";
+                else if (ext == ".ico") mime = "image/x-icon";
+                else if (ext == ".wasm") mime = "application/wasm";
+                else if (ext == ".wav") mime = "audio/wav";
+
+                byte[] content = File.ReadAllBytes(targetFile);
+                SendResponse(ns, "200 OK", mime, content);
+            }
+            catch
+            {
+                SendResponse(ns, "500 Internal Server Error", "text/plain", new byte[0]);
             }
         }
 
