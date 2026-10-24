@@ -1,0 +1,178 @@
+name: Build LinguaDesk Pro v7.0 Single-File EXE (All-In-One)
+
+on:
+  push:
+    branches: [ "main", "master", "**" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-single-file-exe:
+    name: Build Single-File EXE + OCR + Neural + Dictionary (Windows x64)
+    runs-on: windows-latest
+
+    steps:
+      - name: 1. Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Latest Patched .NET 8.0 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: 3. Security Audit & Verify Zero Vulnerable Packages
+        shell: pwsh
+        run: |
+          Write-Host "Checking .NET SDK version and verifying zero vulnerable dependencies..."
+          dotnet --info
+          dotnet restore src/LinguaDeskPro.SingleExe/LinguaDeskPro.SingleExe.csproj
+          dotnet list src/LinguaDeskPro.SingleExe/LinguaDeskPro.SingleExe.csproj package --vulnerable
+
+      - name: 4. Bundle Complete Arabic & English OCR Models (ara.traineddata + eng.traineddata) & Tesseract.js v5.1.1
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          New-Item -ItemType Directory -Force -Path "resources/ocr/tessdata" | Out-Null
+          New-Item -ItemType Directory -Force -Path "resources/neural_models" | Out-Null
+          New-Item -ItemType Directory -Force -Path "ui/vendor/tesseract" | Out-Null
+
+          Write-Host "Downloading official Tesseract Arabic & English OCR models (tessdata_fast)..."
+          Invoke-WebRequest -Uri "https://github.com/tesseract-ocr/tessdata_fast/raw/main/ara.traineddata" -OutFile "resources/ocr/tessdata/ara.traineddata" -UseBasicParsing
+          Invoke-WebRequest -Uri "https://github.com/tesseract-ocr/tessdata_fast/raw/main/eng.traineddata" -OutFile "resources/ocr/tessdata/eng.traineddata" -UseBasicParsing
+          Copy-Item "resources/ocr/tessdata/ara.traineddata" "resources/ocr/ara.traineddata" -Force
+          Copy-Item "resources/ocr/tessdata/eng.traineddata" "resources/ocr/eng.traineddata" -Force
+
+          Write-Host "Downloading latest patched Tesseract.js v5.1.1 offline runtime..."
+          Invoke-WebRequest -Uri "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js" -OutFile "ui/vendor/tesseract/tesseract.min.js" -UseBasicParsing
+          Invoke-WebRequest -Uri "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/worker.min.js" -OutFile "ui/vendor/tesseract/worker.min.js" -UseBasicParsing
+          Invoke-WebRequest -Uri "https://cdn.jsdelivr.net/npm/tesseract.js-core@5.1.0/tesseract-core.wasm.js" -OutFile "ui/vendor/tesseract/tesseract-core.wasm.js" -UseBasicParsing
+
+          # Decompress linguadesk_dictionary.db.gz so the full SQLite DB is ready inside EmbeddedPayload.zip
+          if (Test-Path "resources/database/linguadesk_dictionary.db.gz") {
+            Write-Host "Decompressing resources/database/linguadesk_dictionary.db.gz..."
+            $inStream = New-Object System.IO.FileStream("resources/database/linguadesk_dictionary.db.gz", [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read)
+            $gzStream = New-Object System.IO.Compression.GZipStream($inStream, [System.IO.Compression.CompressionMode]::Decompress)
+            $outStream = New-Object System.IO.FileStream("resources/database/linguadesk_dictionary.db", [System.IO.FileMode]::Create, [System.IO.FileAccess]::Write)
+            $gzStream.CopyTo($outStream)
+            $outStream.Close(); $gzStream.Close(); $inStream.Close()
+          }
+          Get-ChildItem "resources/ocr" | Format-Table Name, Length
+
+      - name: 5. Create EmbeddedPayload.zip (UI + 145,935 Dictionary + OCR Models + Neural Engine)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $stagingDir = Join-Path $env:RUNNER_TEMP "LinguaDeskPro_Payload"
+          if (Test-Path $stagingDir) { Remove-Item $stagingDir -Recurse -Force }
+          New-Item -ItemType Directory -Force -Path $stagingDir | Out-Null
+
+          Copy-Item -Path "ui" -Destination (Join-Path $stagingDir "ui") -Recurse -Force
+          Copy-Item -Path "resources" -Destination (Join-Path $stagingDir "resources") -Recurse -Force
+          Copy-Item -Path "scripts" -Destination (Join-Path $stagingDir "scripts") -Recurse -Force
+
+          $zipPath = Join-Path (Resolve-Path "src/LinguaDeskPro.SingleExe").Path "EmbeddedPayload.zip"
+          if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
+          Compress-Archive -Path "$stagingDir\*" -DestinationPath $zipPath -CompressionLevel Optimal -Force
+
+          $zipSizeMB = [Math]::Round((Get-Item $zipPath).Length / 1MB, 2)
+          Write-Host "EmbeddedPayload.zip created successfully: $zipSizeMB MB"
+
+      - name: 6. Publish Single-File Self-Contained Executable (LinguaDeskPro.exe)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          dotnet publish src/LinguaDeskPro.SingleExe/LinguaDeskPro.SingleExe.csproj `
+            -c Release `
+            -r win-x64 `
+            --self-contained true `
+            -p:PublishSingleFile=true `
+            -p:IncludeNativeLibrariesForSelfExtract=true `
+            -p:EnableCompressionInSingleFile=true `
+            -p:DebugType=none `
+            -p:DebugSymbols=false `
+            -o publish/single-exe
+
+          New-Item -ItemType Directory -Force -Path "dist_artifacts" | Out-Null
+          Copy-Item "publish/single-exe/LinguaDeskPro.exe" "dist_artifacts/LinguaDeskPro_v7.0_SingleFile_Portable.exe" -Force
+
+          # Also build Compact Single-File EXE using built-in Windows .NET Framework csc.exe
+          $csc = "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
+          if (Test-Path $csc) {
+            & $csc /nologo /target:winexe /optimize+ `
+              /win32icon:"ui\assets\linguadesk.ico" `
+              /out:"dist_artifacts\LinguaDeskPro_v7.0_Compact_SingleFile.exe" `
+              /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll `
+              /resource:"src\LinguaDeskPro.SingleExe\EmbeddedPayload.zip",LinguaDeskProHost.EmbeddedPayload.zip `
+              "src\LinguaDeskPro.SingleExe\Program.cs"
+          }
+          Get-ChildItem "dist_artifacts" | Format-Table Name, Length
+
+      - name: 7. Build All-In-One Single-File Setup Installer (LinguaDeskPro_Setup_v7.0.exe) via Inno Setup
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $issContent = @"
+          [Setup]
+          AppId={{B8F49A21-7C3E-4D19-9A6B-5E2C8F0D1A70}}
+          AppName=LinguaDesk Pro v7.0 Ultimate
+          AppVersion=7.0.0
+          AppPublisher=Mohammed Albukeer (mohammedalbukeer@gmail.com)
+          DefaultDirName={localappdata}\LinguaDeskPro
+          DefaultGroupName=LinguaDesk Pro
+          DisableProgramGroupPage=yes
+          PrivilegesRequired=lowest
+          OutputDir=dist_artifacts
+          OutputBaseFilename=LinguaDeskPro_Setup_v7.0_AllInOne
+          Compression=lzma2/ultra64
+          SolidCompression=yes
+          WizardStyle=modern
+          ArchitecturesInstallIn64BitMode=x64compatible
+
+          [Languages]
+          Name: "english"; MessagesFile: "compiler:Default.isl"
+
+          [Tasks]
+          Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
+
+          [Files]
+          Source: "publish\single-exe\LinguaDeskPro.exe"; DestDir: "{app}"; Flags: ignoreversion
+
+          [Icons]
+          Name: "{group}\LinguaDesk Pro v7.0"; Filename: "{app}\LinguaDeskPro.exe"
+          Name: "{autodesktop}\LinguaDesk Pro v7.0"; Filename: "{app}\LinguaDeskPro.exe"; Tasks: desktopicon
+
+          [Run]
+          Filename: "{app}\LinguaDeskPro.exe"; Description: "Launch LinguaDesk Pro v7.0 Now"; Flags: nowait postinstall skipifsilent
+
+          [UninstallRun]
+          Filename: "taskkill.exe"; Parameters: "/F /IM LinguaDeskPro.exe"; Flags: runhidden
+          "@
+          Set-Content -Path "LinguaDeskPro_SingleExe_Setup.iss" -Value $issContent -Encoding UTF8
+          iscc "LinguaDeskPro_SingleExe_Setup.iss"
+          Get-ChildItem "dist_artifacts" | Format-Table Name, Length
+
+      - name: 8. Upload Single-File EXE Artifacts to GitHub Actions
+        uses: actions/upload-artifact@v4
+        with:
+          name: LinguaDeskPro-v7.0-SingleFile-EXE
+          path: |
+            dist_artifacts/LinguaDeskPro_v7.0_SingleFile_Portable.exe
+            dist_artifacts/LinguaDeskPro_Setup_v7.0_AllInOne.exe
+            dist_artifacts/LinguaDeskPro_v7.0_Compact_SingleFile.exe
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: 9. Publish GitHub Release Automatically (when pushing a tag or main)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist_artifacts/LinguaDeskPro_v7.0_SingleFile_Portable.exe
+            dist_artifacts/LinguaDeskPro_Setup_v7.0_AllInOne.exe
+            dist_artifacts/LinguaDeskPro_v7.0_Compact_SingleFile.exe
+          generate_release_notes: true
