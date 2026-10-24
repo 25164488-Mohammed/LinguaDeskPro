@@ -1,0 +1,29 @@
+{
+  "engine": "Windows SAPI5 / System.Speech.Synthesis + Web Speech API Local Bridge",
+  "developer": "محمد البكير (Mohammed Al-Bakir)",
+  "supported_accents": [
+    {
+      "code": "en-US",
+      "name_ar": "الإنجليزية الأمريكية (US)",
+      "voice_hint": "Microsoft David / Zira Desktop"
+    },
+    {
+      "code": "en-GB",
+      "name_ar": "الإنجليزية البريطانية (UK)",
+      "voice_hint": "Microsoft Hazel / George Desktop"
+    },
+    {
+      "code": "ar-SA",
+      "name_ar": "العربية الفصحى (SA)",
+      "voice_hint": "Microsoft Naayf Desktop"
+    },
+    {
+      "code": "ar-EG",
+      "name_ar": "العربية الفصحى (EG)",
+      "voice_hint": "Microsoft Hoda Desktop"
+    }
+  ],
+  "learner_slow_rate": 0.65,
+  "normal_rate": 1.0,
+  "fallback_wav": "resources/speech/pronunciation_chime.wav"
+}

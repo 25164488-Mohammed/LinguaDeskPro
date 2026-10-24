@@ -1,0 +1,9 @@
+{
+  "model_name": "LinguaDesk-Neural-Contextual-AR-EN-v4",
+  "architecture": "Hybrid Transformer + Compositional Morphological Matrix",
+  "developer": "عمل محمد البكير (Mohammed Al-Bakir)",
+  "vocab_size": 129379,
+  "names_count": 350,
+  "status": "Pre-Installed & Active",
+  "sentence_templates_capacity": "10,000,000+ Compositional Sentence Combinations"
+}

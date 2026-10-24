@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>7.0.0</Version>
+    <Authors>محمد البكير — Mohammed Albukeer (mohammedalbukeer@gmail.com)</Authors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinguaDeskPro.Core\LinguaDeskPro.Core.csproj" />
+  </ItemGroup>
+</Project>

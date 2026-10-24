@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>محمد البكير (Mohammed Al-Bakir)</Authors>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinguaDeskPro.Core\LinguaDeskPro.Core.csproj" />
+  </ItemGroup>
+</Project>

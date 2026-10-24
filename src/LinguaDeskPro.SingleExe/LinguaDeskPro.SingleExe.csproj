@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>LinguaDeskPro</AssemblyName>
+    <RootNamespace>LinguaDeskProHost</RootNamespace>
+    <ApplicationIcon Condition="Exists('..\..\ui\assets\linguadesk.ico')">..\..\ui\assets\linguadesk.ico</ApplicationIcon>
+    <Authors>محمد البكير (Mohammed Albukeer — mohammedalbukeer@gmail.com)</Authors>
+    <Company>عمل محمد البكير — Mohammed Albukeer</Company>
+    <Product>LinguaDesk Pro v7.0 Ultimate — Single-File Edition</Product>
+    <Version>7.0.0</Version>
+    <NoWarn>SYSLIB0014;SYSLIB0006;CS8600;CS8602;CS8625</NoWarn>
+    <NuGetAudit>true</NuGetAudit>
+    <NuGetAuditLevel>low</NuGetAuditLevel>
+  </PropertyGroup>
+  <ItemGroup Condition="Exists('EmbeddedPayload.zip')">
+    <EmbeddedResource Include="EmbeddedPayload.zip">
+      <LogicalName>LinguaDeskProHost.EmbeddedPayload.zip</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

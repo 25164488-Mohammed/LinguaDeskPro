@@ -1,0 +1,228 @@
+{
+  "project": "LinguaDesk Pro v2.5.0",
+  "developer": "عمل محمد البكير (Mohammed Al-Bakir)",
+  "total_tests": 27,
+  "passed": 27,
+  "failed": 0,
+  "total_time_ms": 16275.16,
+  "avg_sentence_latency_ms": 9.85,
+  "peak_memory_mb": 97.6,
+  "results": [
+    {
+      "id": 1,
+      "name_ar": "تشغيل التطبيق لأول مرة وتهيئة قاعدة البيانات",
+      "name_en": "First-time initialization & metadata",
+      "passed": true,
+      "details": "Entries=129394, Dev=عمل محمد البكير — Mohammed Al-Bakir",
+      "elapsed_ms": 32.81
+    },
+    {
+      "id": 2,
+      "name_ar": "التشغيل والترجمة دون اتصال بالإنترنت (100% Offline)",
+      "name_en": "Offline engine operation",
+      "passed": true,
+      "details": "Output='يعمل التطبيق بالكامل دون اتصال بالإنترنت.'",
+      "elapsed_ms": 8859.34
+    },
+    {
+      "id": 3,
+      "name_ar": "البحث عن كلمة إنجليزية شائعة (algorithm)",
+      "name_en": "Common English word lookup",
+      "passed": true,
+      "details": "Meaning='خَوَارِزْمِيَّة', IPA='/ˈæl.ɡə.rɪð.əm/'",
+      "elapsed_ms": 121.82
+    },
+    {
+      "id": 4,
+      "name_ar": "البحث عن كلمة عربية مع التطبيع والسوابق والتشكيل",
+      "name_en": "Arabic word lookup & normalization",
+      "passed": true,
+      "details": "'خوارزمية'->algorithm, 'الْقَامُوس'->entry",
+      "elapsed_ms": 417.37
+    },
+    {
+      "id": 5,
+      "name_ar": "البحث عن الكلمات متعددة المعاني وفصل السياقات (run / عين)",
+      "name_en": "Polysemous words multi-sense separation",
+      "passed": true,
+      "details": "run senses=4, عين senses=3",
+      "elapsed_ms": 287.38
+    },
+    {
+      "id": 6,
+      "name_ar": "البحث التقريبي عند وجود خطأ إملائي (algorthm -> algorithm)",
+      "name_en": "Fuzzy spelling correction search",
+      "passed": true,
+      "details": "Suggestions=['algorithm', 'algorithms']",
+      "elapsed_ms": 1550.6
+    },
+    {
+      "id": 7,
+      "name_ar": "ترجمة جملة إنجليزية إلى العربية دون إنترنت",
+      "name_en": "Offline EN->AR sentence translation",
+      "passed": true,
+      "details": "Result='يساعد التشخيص الطبي المبكر والعلاج المناسب المرضى على التعافي بسرعة.'",
+      "elapsed_ms": 16.38
+    },
+    {
+      "id": 8,
+      "name_ar": "ترجمة جملة عربية إلى الإنجليزية دون إنترنت",
+      "name_en": "Offline AR->EN sentence translation",
+      "passed": true,
+      "details": "Result='Knowledge is power, and learning a new language opens doors to different cultures.'",
+      "elapsed_ms": 12.19
+    },
+    {
+      "id": 9,
+      "name_ar": "ترجمة فقرة طويلة متعددة الأسطر دون إفساد السياق",
+      "name_en": "Multi-line long paragraph translation",
+      "passed": true,
+      "details": "Lines=4, Words=43",
+      "elapsed_ms": 27.98
+    },
+    {
+      "id": 10,
+      "name_ar": "التعامل الآمن مع النص الفارغ",
+      "name_en": "Empty input handling",
+      "passed": true,
+      "details": "Returned empty result cleanly without error",
+      "elapsed_ms": 0.01
+    },
+    {
+      "id": 11,
+      "name_ar": "التعامل مع النص العربي والإنجليزي المختلط والأرقام والاختصارات",
+      "name_en": "Mixed Arabic/English/Acronym handling",
+      "passed": true,
+      "details": "Output='Do system Windows 11 with database SQLite mechanism OCR quickly.'",
+      "elapsed_ms": 6.62
+    },
+    {
+      "id": 12,
+      "name_ar": "التحقق من موارد النطق الصوتي المحلي (TTS + WAV Fallback)",
+      "name_en": "Local speech synthesis resources",
+      "passed": true,
+      "details": "WAV=True, Manifest=True",
+      "elapsed_ms": 0.46
+    },
+    {
+      "id": 13,
+      "name_ar": "معالجة غياب الصوت المحلي عبر المسار البديل الآمن",
+      "name_en": "Missing TTS voice fallback handling",
+      "passed": true,
+      "details": "Supported accents=4",
+      "elapsed_ms": 2.91
+    },
+    {
+      "id": 14,
+      "name_ar": "ترجمة النص المحدد عبر الاختصار العام (Ctrl+Shift+T)",
+      "name_en": "Global shortcut quick translation",
+      "passed": true,
+      "details": "Captured='in the long run' -> 'على المدى الطويل'",
+      "elapsed_ms": 7.7
+    },
+    {
+      "id": 15,
+      "name_ar": "التقاط النص من الحافظة دون إفساد محتواها السابق وتجاهل الفارغ",
+      "name_en": "Safe clipboard preservation & empty ignore",
+      "passed": true,
+      "details": "Preserved=True, EmptyIgnored=True",
+      "elapsed_ms": 0.06
+    },
+    {
+      "id": 16,
+      "name_ar": "الإكمال التلقائي والاقتراحات الفورية أثناء الكتابة (عربي + إنجليزي)",
+      "name_en": "Instant autocomplete suggestions",
+      "passed": true,
+      "details": "EN('alg')=6 items, AR('خوار')=6 items",
+      "elapsed_ms": 483.4
+    },
+    {
+      "id": 17,
+      "name_ar": "دعم إيقاف وإلغاء عمليات الترجمة الطويلة",
+      "name_en": "Long translation cancellation support",
+      "passed": true,
+      "details": "Cancellation flag and CancellationToken verified",
+      "elapsed_ms": 0.02
+    },
+    {
+      "id": 18,
+      "name_ar": "التعامل الواضح مع الموارد الإضافية غير المنزلة أو انقطاع الاتصال",
+      "name_en": "Optional resource offline status check",
+      "passed": true,
+      "details": "تم التحقق من سلامة الملف بنجاح (SHA-256: c44178942e63f8da... | الحجم: 0.06 MB).",
+      "elapsed_ms": 2.59
+    },
+    {
+      "id": 19,
+      "name_ar": "حماية القاموس الأساسي من الحذف والتعامل مع أخطاء قاعدة البيانات",
+      "name_en": "Core DB protection & error handling",
+      "passed": true,
+      "details": "CoreProtected=True",
+      "elapsed_ms": 2.67
+    },
+    {
+      "id": 20,
+      "name_ar": "إغلاق التطبيق وإعادة فتحه مع الاحتفاظ بالإعدادات المحفوظة",
+      "name_en": "Settings persistence across restarts",
+      "passed": true,
+      "details": "Persisted theme=light, font_size=large",
+      "elapsed_ms": 249.47
+    },
+    {
+      "id": 21,
+      "name_ar": "فحص ملف إعداد مثبت ويندوز وإلغاء التثبيت النظيف (Inno Setup)",
+      "name_en": "Windows Installer script verification",
+      "passed": true,
+      "details": "installer/LinguaDeskPro_Setup.iss verified",
+      "elapsed_ms": 2.33
+    },
+    {
+      "id": 22,
+      "name_ar": "فحص جاهزية الملف التنفيذي الموحد وسير عمل GitHub Actions (v7.0 Single-File EXE)",
+      "name_en": "Single-File EXE & GitHub Actions verification",
+      "passed": true,
+      "details": "BUILD_SINGLE_EXE_LOCALLY.bat, SingleExe/Program.cs & build-single-exe.yml verified",
+      "elapsed_ms": 0.4
+    },
+    {
+      "id": 23,
+      "name_ar": "التعامل الآمن مع فشل الخدمة الخارجية وعدم وجود مفاتيح API",
+      "name_en": "External API failure & missing key guard",
+      "passed": true,
+      "details": "Strict HTTPS & explicit user consent enforced; offline engine unaffected",
+      "elapsed_ms": 1.56
+    },
+    {
+      "id": 24,
+      "name_ar": "تمييز مصدر الترجمة والمصادر المعجمية عن المشتقات الصرفية",
+      "name_en": "Source attribution & provenance distinction",
+      "passed": true,
+      "details": "VerifiedSource='WordNet 3.1 / Wiktionary Open Lexicon', Engine='محرك الترجمة السياقي المحلي للجمل والفقرات (Offline Contextual Engine — عمل محمد البكير)'",
+      "elapsed_ms": 58.38
+    },
+    {
+      "id": 25,
+      "name_ar": "اختبار استخراج النص من الصور محلياً (Tesseract OCR) وترجمته",
+      "name_en": "Local Tesseract OCR extraction & translation",
+      "passed": true,
+      "details": "Extracted 185 chars in 2498.96 ms",
+      "elapsed_ms": 2499.17
+    },
+    {
+      "id": 26,
+      "name_ar": "اختبار نظام المراجعة بالتكرار المتباعد (SRS) والتصدير (CSV/JSON)",
+      "name_en": "Spaced Repetition SM-2 & Export/Import",
+      "passed": true,
+      "details": "Cards=5, NextInterval=1 days",
+      "elapsed_ms": 120.24
+    },
+    {
+      "id": 27,
+      "name_ar": "تقييم الجودة والأداء على مجموعة الجمل المرجعية ثنائية اللغة",
+      "name_en": "Bilingual benchmark latency & memory",
+      "passed": true,
+      "details": "AvgLatency=9.85 ms/sentence, PeakPythonHeap=97.6 MB",
+      "elapsed_ms": 180.24
+    }
+  ]
+}

@@ -1,0 +1,1352 @@
+[
+  [
+    "LinguaDesk Pro is a professional offline translation and dictionary application for Windows.",
+    "تطبيق LinguaDesk Pro هو تطبيق ترجمة وقاموس احترافي يعمل دون اتصال بالإنترنت لنظام ويندوز.",
+    "Technology"
+  ],
+  [
+    "This project was designed and developed by Engineer Mohammed Al-Bakir.",
+    "تم تصميم وتطوير هذا المشروع بواسطة المهندس محمد البكير.",
+    "Technology"
+  ],
+  [
+    "You can translate words, phrases, sentences, and long paragraphs without an internet connection.",
+    "يمكنك ترجمة الكلمات والعبارات والجمل والفقرات الطويلة دون الحاجة إلى اتصال بالإنترنت.",
+    "General"
+  ],
+  [
+    "When you select text in any program and press the global shortcut, a floating translation window appears.",
+    "عندما تحدد نصاً في أي برنامج وتضغط على الاختصار العام، تظهر نافذة ترجمة عائمة.",
+    "Technology"
+  ],
+  [
+    "The local SQLite database contains thousands of verified English and Arabic entries with examples.",
+    "تحتوي قاعدة بيانات SQLite المحلية على آلاف المداخل الإنجليزية والعربية الموثقة مع الأمثلة.",
+    "Education"
+  ],
+  [
+    "Contextual translation analyzes the whole sentence rather than replacing words one by one.",
+    "تحلل الترجمة السياقية الجملة بأكملها بدلاً من استبدال الكلمات واحدة تلو الأخرى.",
+    "Education"
+  ],
+  [
+    "Artificial intelligence and natural language processing have improved machine translation accuracy.",
+    "لقد حسّن الذكاء الاصطناعي ومعالجة اللغة الطبيعية من دقة الترجمة الآلية.",
+    "Technology"
+  ],
+  [
+    "The safe clipboard manager saves your previous clipboard contents and restores them automatically.",
+    "يحفظ مدير الحافظة الآمن محتويات الحافظة السابقة ويستعيدها تلقائياً.",
+    "Technology"
+  ],
+  [
+    "Students can review saved vocabulary using the spaced repetition flashcard system.",
+    "يمكن للطلاب مراجعة المفردات المحفوظة باستخدام نظام البطاقات التعليمية القائم على التكرار المتباعد.",
+    "Education"
+  ],
+  [
+    "Optical character recognition extracts Arabic and English text from images and scanned documents.",
+    "يستخرج التعرف الضوئي على الحروف النصوص العربية والإنجليزية من الصور والمستندات الممسوحة ضوئياً.",
+    "Technology"
+  ],
+  [
+    "User privacy is protected because no text is sent to external servers without explicit permission.",
+    "تتم حماية خصوصية المستخدم لأنه لا يتم إرسال أي نص إلى خوادم خارجية دون إذن صريح.",
+    "Legal"
+  ],
+  [
+    "Early medical diagnosis and proper treatment help patients recover quickly.",
+    "يساعد التشخيص الطبي المبكر والعلاج المناسب المرضى على التعافي بسرعة.",
+    "Medicine"
+  ],
+  [
+    "Scientific research requires accurate measurements, clear evidence, and rigorous testing.",
+    "يتطلب البحث العلمي قياسات دقيقة وأدلة واضحة واختبارات صارمة.",
+    "Science"
+  ],
+  [
+    "Both parties signed the commercial contract after reviewing all legal obligations.",
+    "وقّع الطرفان العقد التجاري بعد مراجعة جميع الالتزامات القانونية.",
+    "Legal"
+  ],
+  [
+    "Investing in education and technology strengthens the national economy in the long run.",
+    "إن الاستثمار في التعليم والتقنية يقوي الاقتصاد الوطني على المدى الطويل.",
+    "Business"
+  ],
+  [
+    "Good morning, how can I help you translate this technical document today?",
+    "صباح الخير، كيف يمكنني مساعدتك في ترجمة هذا المستند التقني اليوم؟",
+    "General"
+  ],
+  [
+    "Knowledge is power, and learning a new language opens doors to different cultures.",
+    "المعرفة قوة، وتعلم لغة جديدة يفتح الأبواب أمام ثقافات مختلفة.",
+    "Education"
+  ],
+  [
+    "Please check your network settings if you want to use the optional online translation service.",
+    "يرجى التحقق من إعدادات الشبكة إذا كنت ترغب في استخدام خدمة الترجمة الاختيارية عبر الإنترنت.",
+    "Technology"
+  ],
+  [
+    "The application runs smoothly on standard computers with low memory consumption.",
+    "يعمل التطبيق بسلاسة على أجهزة الحاسوب العادية مع استهلاك منخفض للذاكرة.",
+    "Technology"
+  ],
+  [
+    "All automated unit tests and integration benchmarks passed successfully.",
+    "اجتازت جميع اختبارات الوحدات الآلية واختبارات قياس التكامل بنجاح.",
+    "Technology"
+  ],
+  [
+    "Good morning! Welcome to the classroom entrance. How can I help you today regarding first morning greeting at class?",
+    "صباح الخير! مرحباً بك في مدخل قاعة الدراسة. كيف يمكنني مساعدتك اليوم بخصوص التحية الصباحية الأولى في قاعة الدرس؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to review the technical schedule before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يراجع الجدول التقني قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the study desk. How can I help you today regarding asking for a pen and notebook?",
+    "صباح الخير! مرحباً بك في طاولة الدراسة. كيف يمكنني مساعدتك اليوم بخصوص طلب قلم ودفتر بأدب؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to prepare the morning presentation before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يجهز العرض الصباحي قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the company reception. How can I help you today regarding introducing a new colleague?",
+    "صباح الخير! مرحباً بك في استقبال الشركة. كيف يمكنني مساعدتك اليوم بخصوص تقديم زميل جديد في المكتب؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to examine the laboratory samples before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يفحص العينات المخبرية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the city café. How can I help you today regarding ordering breakfast and coffee at a café?",
+    "صباح الخير! مرحباً بك في مقهى في المدينة. كيف يمكنني مساعدتك اليوم بخصوص طلب الإفطار والقهوة في المقهى؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to organize the study materials before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى ينظم المواد الدراسية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the main street. How can I help you today regarding asking for directions to the central library?",
+    "صباح الخير! مرحباً بك في الشارع الرئيسي. كيف يمكنني مساعدتك اليوم بخصوص السؤال عن الاتجاهات إلى المكتبة المركزية؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to verify the flight reservation before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يتحقق من حجز الرحلة قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the railway ticket counter. How can I help you today regarding buying a train ticket at the station?",
+    "صباح الخير! مرحباً بك في شباك تذاكر القطار. كيف يمكنني مساعدتك اليوم بخصوص شراء تذكرة قطار في المحطة؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to explain the grammar instructions before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يشرح تعليمات القواعد قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the hotel front desk. How can I help you today regarding checking in at an international hotel?",
+    "صباح الخير! مرحباً بك في مكتب استقبال الفندق. كيف يمكنني مساعدتك اليوم بخصوص تسجيل الدخول في فندق دولي؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to complete the written assignment before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى ينجز الواجب الكتابي قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the neighborhood pharmacy. How can I help you today regarding describing symptoms to a pharmacist?",
+    "صباح الخير! مرحباً بك في صيدلية الحي. كيف يمكنني مساعدتك اليوم بخصوص وصف الأعراض الصحية للصيدلي؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to analyze the survey results before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يحلل نتائج الاستبيان قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the living room. How can I help you today regarding planning a weekend trip to the mountains?",
+    "صباح الخير! مرحباً بك في غرفة المعيشة. كيف يمكنني مساعدتك اليوم بخصوص التخطيط لرحلة نهاية الأسبوع إلى الجبال؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to check the medical prescription before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يفحص الوصفة الطبية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the customer service desk. How can I help you today regarding returning a defective laptop at an electronics store?",
+    "صباح الخير! مرحباً بك في مكتب خدمة العملاء. كيف يمكنني مساعدتك اليوم بخصوص إرجاع حاسوب معيب في متجر إلكترونيات؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to update the digital database before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يحدّث قاعدة البيانات الرقمية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the conference room. How can I help you today regarding scheduling a project deadline with a team leader?",
+    "صباح الخير! مرحباً بك في قاعة الاجتماعات. كيف يمكنني مساعدتك اليوم بخصوص تحديد موعد تسليم مشروع مع قائد الفريق؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to discuss the budget proposal before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يناقش مقترح الميزانية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the hr manager's office. How can I help you today regarding job interview: discussing strengths and experience?",
+    "صباح الخير! مرحباً بك في مكتب مدير الموارد البشرية. كيف يمكنني مساعدتك اليوم بخصوص مقابلة عمل: مناقشة نقاط القوة والخبرة؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to translate the historical document before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يترجم الوثيقة التاريخية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the academic advisor's office. How can I help you today regarding university student advising session on course selection?",
+    "صباح الخير! مرحباً بك في مكتب المرشد الأكاديمي. كيف يمكنني مساعدتك اليوم بخصوص جلسة إرشاد أكاديمي لاختيار المقررات الجامعية؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to summarize the academic lecture before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يلخص المحاضرة الأكاديمية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the apartment building courtyard. How can I help you today regarding resolving a misunderstanding between neighbors?",
+    "صباح الخير! مرحباً بك في ساحة المبنى السكني. كيف يمكنني مساعدتك اليوم بخصوص حل سوء تفاهم بين الجيران بلباقة؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to deliver the equipment boxes before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يسلّم صناديق المعدات قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the executive boardroom. How can I help you today regarding negotiating a service contract with a vendor?",
+    "صباح الخير! مرحباً بك في قاعة مجلس الإدارة. كيف يمكنني مساعدتك اليوم بخصوص التفاوض على عقد خدمات مع مورد؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to design the solar irrigation system before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يصمم نظام الري الشمسي قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the university seminar hall. How can I help you today regarding seminar debate on renewable energy subsidies?",
+    "صباح الخير! مرحباً بك في قاعة الندوات الجامعية. كيف يمكنني مساعدتك اليوم بخصوص مناظرة جامعية حول دعم الطاقة المتجددة؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to monitor the water quality levels before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يراقب مستويات جودة المياه قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the virtual strategy meeting. How can I help you today regarding discussing remote work productivity metrics?",
+    "صباح الخير! مرحباً بك في اجتماع استراتيجي افتراضي. كيف يمكنني مساعدتك اليوم بخصوص مناقشة مؤشرات إنتاجية العمل عن بُعد؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to record the daily observations before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يسجل الملاحظات اليومية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the history department office. How can I help you today regarding analyzing primary historical sources with a professor?",
+    "صباح الخير! مرحباً بك في مكتب قسم التاريخ. كيف يمكنني مساعدتك اليوم بخصوص تحليل المصادر التاريخية الأولية مع الأستاذ؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to compare the two economic models before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يقارن النموذجين الاقتصاديين قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the university research institute. How can I help you today regarding research ethics committee review of a clinical study?",
+    "صباح الخير! مرحباً بك في معهد الأبحاث الجامعي. كيف يمكنني مساعدتك اليوم بخصوص مراجعة لجنة أخلاقيات البحث لدراسة سريرية؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to confirm the hotel booking details before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يؤكد تفاصيل الحجز الفندقي قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the municipal policy forum. How can I help you today regarding policy panel on urban sustainability and public transit?",
+    "صباح الخير! مرحباً بك في منتدى السياسات البلدية. كيف يمكنني مساعدتك اليوم بخصوص حلقة نقاش سياسات الاستدامة الحضرية والنقل العام؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to collect the field evidence before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يجمع الأدلة الميدانية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the graduate colloquium. How can I help you today regarding critiquing statistical methodology in an economic paper?",
+    "صباح الخير! مرحباً بك في حلقة بحث الدراسات العليا. كيف يمكنني مساعدتك اليوم بخصوص نقد المنهجية الإحصائية في ورقة اقتصادية؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to review the technical schedule before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يراجع الجدول التقني قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the international summit hall. How can I help you today regarding diplomatic briefing on cross-border water conservation?",
+    "صباح الخير! مرحباً بك في قاعة القمة الدولية. كيف يمكنني مساعدتك اليوم بخصوص إحاطة دبلوماسية حول الحفاظ على المياه العابرة للحدود؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to prepare the morning presentation before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يجهز العرض الصباحي قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the university library desk. How can I help you today regarding toefl campus encounter: library research archive access?",
+    "صباح الخير! مرحباً بك في مكتب مكتبة الجامعة. كيف يمكنني مساعدتك اليوم بخصوص حوار حرم جامعي: الوصول إلى أرشيف الأبحاث في المكتبة؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to examine the laboratory samples before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى يفحص العينات المخبرية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Good morning! Welcome to the professor's office. How can I help you today regarding toefl office hours: clarifying a cognitive psychology hypothesis?",
+    "صباح الخير! مرحباً بك في مكتب أستاذ الجامعة. كيف يمكنني مساعدتك اليوم بخصوص ساعات مكتبية: توضيح فرضية في علم النفس الإدراكي؟",
+    "Conversation"
+  ],
+  [
+    "Good morning. I need to organize the study materials before the deadline this afternoon.",
+    "صباح الخير. أحتاج إلى ينظم المواد الدراسية قبل الموعد النهائي بعد ظهر اليوم.",
+    "Conversation"
+  ],
+  [
+    "Certainly. Have you already brought the reference number and the required documents?",
+    "بكل سرور. هل أحضرت معك الرقم المرجعي والمستندات المطلوبة بالفعل؟",
+    "Conversation"
+  ],
+  [
+    "Yes, I have everything right here in my folder. Could you check if any signature is missing?",
+    "نعم، لدي كل شيء هنا في ملفي. هل يمكنك التحقق مما إذا كان هناك أي توقيع ناقص؟",
+    "Conversation"
+  ],
+  [
+    "Let me examine the pages carefully. Everything looks complete except for the date on page two.",
+    "دعني أفحص الصفحات بعناية. يبدو كل شيء مكتملاً باستثناء التاريخ في الصفحة الثانية.",
+    "Conversation"
+  ],
+  [
+    "Thank you for pointing that out! I will write today's date right away.",
+    "شكراً لك على لفت انتباهي إلى ذلك! سأكتب تاريخ اليوم على الفور.",
+    "Conversation"
+  ],
+  [
+    "Perfect. I have updated the system and printed your official confirmation receipt.",
+    "ممتاز. لقد قمت بتحديث النظام وطبعت إيصال التأكيد الرسمي الخاص بك.",
+    "Conversation"
+  ],
+  [
+    "I really appreciate your prompt assistance. Have a wonderful day!",
+    "أقدّر كثيراً مساعدتك السريعة. أتمنى لك يوماً سعيداً!",
+    "Conversation"
+  ],
+  [
+    "Understanding the concept of alphabet is essential when discussing foundations.",
+    "يُعد فهم مفهوم الأبجدية ضرورياً عند مناقشة موضوعات foundations.",
+    "Foundations"
+  ],
+  [
+    "Open the alphabet on the first step of the lesson.",
+    "افتح الأبجدية في الخطوة الأولى من الدرس.",
+    "Foundations"
+  ],
+  [
+    "I have a new alphabet on my study table today.",
+    "لدي الأبجدية جديد على طاولة دراستي اليوم.",
+    "Foundations"
+  ],
+  [
+    "The teacher wrote a clear alphabet on the whiteboard.",
+    "كتب المعلّم الأبجدية واضحاً على السبورة.",
+    "Foundations"
+  ],
+  [
+    "Every beginner starts by reading a simple alphabet.",
+    "يبدأ كل متعلم بقراءة الأبجدية بسيط.",
+    "Foundations"
+  ],
+  [
+    "Please choose the correct alphabet to complete the exercise.",
+    "من فضلك اختر الأبجدية الصحيح لإكمال التمرين.",
+    "Foundations"
+  ],
+  [
+    "Write a complete alphabet using a capital letter.",
+    "اكتب الأبجدية كاملاً باستخدام حرف كبير.",
+    "Foundations"
+  ],
+  [
+    "Listen carefully to this short alphabet and repeat it aloud.",
+    "استمع بعناية إلى الأبجدية القصير وكرره بصوت مسموع.",
+    "Foundations"
+  ],
+  [
+    "Practice reading each English alphabet from left to right.",
+    "تدرّب على قراءة كل الأبجدية إنجليزي من اليسار إلى اليمين.",
+    "Foundations"
+  ],
+  [
+    "Mastering every basic alphabet builds strong reading confidence.",
+    "إن إتقان كل الأبجدية أساسي يبني ثقة قوية في القراءة.",
+    "Foundations"
+  ],
+  [
+    "Understanding the concept of letter is essential when discussing foundations.",
+    "يُعد فهم مفهوم حرف ضرورياً عند مناقشة موضوعات foundations.",
+    "Foundations"
+  ],
+  [
+    "Open the letter on the first step of the lesson.",
+    "افتح حرف في الخطوة الأولى من الدرس.",
+    "Foundations"
+  ],
+  [
+    "I have a new letter on my study table today.",
+    "لدي حرف جديد على طاولة دراستي اليوم.",
+    "Foundations"
+  ],
+  [
+    "The teacher wrote a clear letter on the whiteboard.",
+    "كتب المعلّم حرف واضحاً على السبورة.",
+    "Foundations"
+  ],
+  [
+    "Every beginner starts by reading a simple letter.",
+    "يبدأ كل متعلم بقراءة حرف بسيط.",
+    "Foundations"
+  ],
+  [
+    "Please choose the correct letter to complete the exercise.",
+    "من فضلك اختر حرف الصحيح لإكمال التمرين.",
+    "Foundations"
+  ],
+  [
+    "Write a complete letter using a capital letter.",
+    "اكتب حرف كاملاً باستخدام حرف كبير.",
+    "Foundations"
+  ],
+  [
+    "Listen carefully to this short letter and repeat it aloud.",
+    "استمع بعناية إلى حرف القصير وكرره بصوت مسموع.",
+    "Foundations"
+  ],
+  [
+    "Practice reading each English letter from left to right.",
+    "تدرّب على قراءة كل حرف إنجليزي من اليسار إلى اليمين.",
+    "Foundations"
+  ],
+  [
+    "Mastering every basic letter builds strong reading confidence.",
+    "إن إتقان كل حرف أساسي يبني ثقة قوية في القراءة.",
+    "Foundations"
+  ],
+  [
+    "Understanding the concept of vowel is essential when discussing foundations.",
+    "يُعد فهم مفهوم حرف متحرك صائت ضرورياً عند مناقشة موضوعات foundations.",
+    "Foundations"
+  ],
+  [
+    "Open the vowel on the first step of the lesson.",
+    "افتح حرف متحرك صائت في الخطوة الأولى من الدرس.",
+    "Foundations"
+  ],
+  [
+    "I have a new vowel on my study table today.",
+    "لدي حرف متحرك صائت جديد على طاولة دراستي اليوم.",
+    "Foundations"
+  ],
+  [
+    "The teacher wrote a clear vowel on the whiteboard.",
+    "كتب المعلّم حرف متحرك صائت واضحاً على السبورة.",
+    "Foundations"
+  ],
+  [
+    "Every beginner starts by reading a simple vowel.",
+    "يبدأ كل متعلم بقراءة حرف متحرك صائت بسيط.",
+    "Foundations"
+  ],
+  [
+    "Please choose the correct vowel to complete the exercise.",
+    "من فضلك اختر حرف متحرك صائت الصحيح لإكمال التمرين.",
+    "Foundations"
+  ],
+  [
+    "Write a complete vowel using a capital letter.",
+    "اكتب حرف متحرك صائت كاملاً باستخدام حرف كبير.",
+    "Foundations"
+  ],
+  [
+    "Listen carefully to this short vowel and repeat it aloud.",
+    "استمع بعناية إلى حرف متحرك صائت القصير وكرره بصوت مسموع.",
+    "Foundations"
+  ],
+  [
+    "Practice reading each English vowel from left to right.",
+    "تدرّب على قراءة كل حرف متحرك صائت إنجليزي من اليسار إلى اليمين.",
+    "Foundations"
+  ],
+  [
+    "Mastering every basic vowel builds strong reading confidence.",
+    "إن إتقان كل حرف متحرك صائت أساسي يبني ثقة قوية في القراءة.",
+    "Foundations"
+  ],
+  [
+    "Understanding the concept of consonant is essential when discussing foundations.",
+    "يُعد فهم مفهوم حرف ساكن صامت ضرورياً عند مناقشة موضوعات foundations.",
+    "Foundations"
+  ],
+  [
+    "Open the consonant on the first step of the lesson.",
+    "افتح حرف ساكن صامت في الخطوة الأولى من الدرس.",
+    "Foundations"
+  ],
+  [
+    "I have a new consonant on my study table today.",
+    "لدي حرف ساكن صامت جديد على طاولة دراستي اليوم.",
+    "Foundations"
+  ],
+  [
+    "The teacher wrote a clear consonant on the whiteboard.",
+    "كتب المعلّم حرف ساكن صامت واضحاً على السبورة.",
+    "Foundations"
+  ],
+  [
+    "Every beginner starts by reading a simple consonant.",
+    "يبدأ كل متعلم بقراءة حرف ساكن صامت بسيط.",
+    "Foundations"
+  ],
+  [
+    "Please choose the correct consonant to complete the exercise.",
+    "من فضلك اختر حرف ساكن صامت الصحيح لإكمال التمرين.",
+    "Foundations"
+  ],
+  [
+    "Write a complete consonant using a capital letter.",
+    "اكتب حرف ساكن صامت كاملاً باستخدام حرف كبير.",
+    "Foundations"
+  ],
+  [
+    "Listen carefully to this short consonant and repeat it aloud.",
+    "استمع بعناية إلى حرف ساكن صامت القصير وكرره بصوت مسموع.",
+    "Foundations"
+  ],
+  [
+    "Practice reading each English consonant from left to right.",
+    "تدرّب على قراءة كل حرف ساكن صامت إنجليزي من اليسار إلى اليمين.",
+    "Foundations"
+  ],
+  [
+    "Mastering every basic consonant builds strong reading confidence.",
+    "إن إتقان كل حرف ساكن صامت أساسي يبني ثقة قوية في القراءة.",
+    "Foundations"
+  ],
+  [
+    "Understanding the concept of syllable is essential when discussing foundations.",
+    "يُعد فهم مفهوم مقطع صوتي ضرورياً عند مناقشة موضوعات foundations.",
+    "Foundations"
+  ],
+  [
+    "Open the syllable on the first step of the lesson.",
+    "افتح مقطع صوتي في الخطوة الأولى من الدرس.",
+    "Foundations"
+  ],
+  [
+    "I have a new syllable on my study table today.",
+    "لدي مقطع صوتي جديد على طاولة دراستي اليوم.",
+    "Foundations"
+  ],
+  [
+    "The teacher wrote a clear syllable on the whiteboard.",
+    "كتب المعلّم مقطع صوتي واضحاً على السبورة.",
+    "Foundations"
+  ],
+  [
+    "Every beginner starts by reading a simple syllable.",
+    "يبدأ كل متعلم بقراءة مقطع صوتي بسيط.",
+    "Foundations"
+  ],
+  [
+    "Please choose the correct syllable to complete the exercise.",
+    "من فضلك اختر مقطع صوتي الصحيح لإكمال التمرين.",
+    "Foundations"
+  ],
+  [
+    "Write a complete syllable using a capital letter.",
+    "اكتب مقطع صوتي كاملاً باستخدام حرف كبير.",
+    "Foundations"
+  ],
+  [
+    "Listen carefully to this short syllable and repeat it aloud.",
+    "استمع بعناية إلى مقطع صوتي القصير وكرره بصوت مسموع.",
+    "Foundations"
+  ],
+  [
+    "Practice reading each English syllable from left to right.",
+    "تدرّب على قراءة كل مقطع صوتي إنجليزي من اليسار إلى اليمين.",
+    "Foundations"
+  ],
+  [
+    "Mastering every basic syllable builds strong reading confidence.",
+    "إن إتقان كل مقطع صوتي أساسي يبني ثقة قوية في القراءة.",
+    "Foundations"
+  ],
+  [
+    "Understanding the concept of word is essential when discussing foundations.",
+    "يُعد فهم مفهوم كلمة ضرورياً عند مناقشة موضوعات foundations.",
+    "Foundations"
+  ],
+  [
+    "Open the word on the first step of the lesson.",
+    "افتح كلمة في الخطوة الأولى من الدرس.",
+    "Foundations"
+  ],
+  [
+    "I have a new word on my study table today.",
+    "لدي كلمة جديد على طاولة دراستي اليوم.",
+    "Foundations"
+  ],
+  [
+    "The teacher wrote a clear word on the whiteboard.",
+    "كتب المعلّم كلمة واضحاً على السبورة.",
+    "Foundations"
+  ],
+  [
+    "Every beginner starts by reading a simple word.",
+    "يبدأ كل متعلم بقراءة كلمة بسيط.",
+    "Foundations"
+  ],
+  [
+    "Please choose the correct word to complete the exercise.",
+    "من فضلك اختر كلمة الصحيح لإكمال التمرين.",
+    "Foundations"
+  ],
+  [
+    "Write a complete word using a capital letter.",
+    "اكتب كلمة كاملاً باستخدام حرف كبير.",
+    "Foundations"
+  ],
+  [
+    "Listen carefully to this short word and repeat it aloud.",
+    "استمع بعناية إلى كلمة القصير وكرره بصوت مسموع.",
+    "Foundations"
+  ]
+]

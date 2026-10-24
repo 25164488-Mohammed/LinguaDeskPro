@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="108" height="108" rx="24" fill="url(#bgGrad)" stroke="#38bdf8" stroke-width="3"/>
+  <text x="36" y="66" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#ffffff">A</text>
+  <text x="68" y="74" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#fde047">ض</text>
+  <path d="M28 88 L92 88" stroke="#bae6fd" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="60" cy="88" r="5" fill="#fde047"/>
+</svg>

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinguaDesk Pro — تطبيق الترجمة والقاموس الذكي | عمل محمد البكير</title>
+  <link rel="icon" href="assets/linguadesk.ico" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+</head>
+<body class="theme-dark font-medium">
+
+  <!-- Toast Notifications -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Top Desktop Application Header -->
+  <header class="top-header">
+    <div class="brand-wrap">
+      <img src="assets/linguadesk_logo.svg" alt="LinguaDesk Pro Logo" class="brand-logo" />
+      <div>
+        <div class="brand-title">
+          <span>LinguaDesk Pro</span>
+          <span class="author-badge">عمل محمد البكير | Mohammed Albukeer</span>
+        </div>
+        <div class="brand-subtitle" id="headerSubtitle">
+          محرك ترجمة سياقي وقاموس ثنائي الاتجاه يعمل دون اتصال بالإنترنت (Windows Desktop v7.0 Single-File Edition)
+        </div>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <div class="status-pill" id="offlineStatusPill" title="يعمل التطبيق بالكامل محلياً دون الحاجة إلى إنترنت">
+        <span class="status-dot"></span>
+        <span id="offlineStatusText">وضع عدم الاتصال نشط (100% Offline)</span>
+      </div>
+      <button class="btn btn-sm" id="btnQuickFloatingTest" title="تجربة نافذة الترجمة السريعة العائمة (Ctrl+Shift+T)">
+        ⚡ نافذة الترجمة السريعة (Ctrl+Shift+T)
+      </button>
+      <button class="btn btn-sm" id="btnToggleDir" title="تبديل اتجاه الواجهة RTL / LTR">
+        🌐 RTL / LTR
+      </button>
+      <span id="hostSyncBadge" class="status-pill" style="display:none; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); color:#34d399; font-size:0.78rem; padding:4px 10px; border-radius:999px;">🔗 متزامن مع النافذة العائمة</span>
+      <button class="btn btn-sm" id="btnQuitHostCompletely" title="إغلاق التطبيق وإنهاء المهمة من الخلفية نهائياً" style="border-color:rgba(248,113,113,0.5); color:#fca5a5;">
+        ❌ إنهاء التطبيق
+      </button>
+      <button class="btn btn-sm" id="btnToggleTheme" title="تبديل المظهر الداكن / الفاتح">
+        🌓 المظهر
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <div class="workspace-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <ul class="nav-list" role="navigation" aria-label="الأقسام الرئيسية">
+        <li>
+          <button class="nav-btn active" data-target="sec-translation">
+            <span class="nav-icon">⇄</span>
+            <span>الترجمة السياقية</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-dictionary">
+            <span class="nav-icon">📖</span>
+            <span>القاموس الشامل</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-history">
+            <span class="nav-icon">🕒</span>
+            <span>سجل الترجمات</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-favorites">
+            <span class="nav-icon">★</span>
+            <span>الكلمات المفضلة</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-learning">
+            <span class="nav-icon">🎓</span>
+            <span>التعلم والمراجعة (SRS)</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-ocr">
+            <span class="nav-icon">📷</span>
+            <span>ترجمة الصور (OCR)</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-resources">
+            <span class="nav-icon">📦</span>
+            <span>إدارة الموارد المحلية</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-settings">
+            <span class="nav-icon">⚙️</span>
+            <span>الإعدادات والخصوصية</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-target="sec-about">
+            <span class="nav-icon">ℹ️</span>
+            <span>حول التطبيق والتراخيص</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <strong>عمل محمد البكير</strong>
+        <div>هندسة وتطوير: م. محمد البكير</div>
+        <div id="sidebarDbStats" style="margin-top:4px; color:var(--accent-primary);">
+          7,345 مدخل معجمي | 1,230 تعبير
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dynamic View Area -->
+    <main class="main-content">
+
+      <!-- =================================================================
+           1. SECTION: CONTEXTUAL SENTENCE & PARAGRAPH TRANSLATION
+           ================================================================= -->
+      <section id="sec-translation" class="page-section active">
+        <div class="card">
+          <div class="translator-bar">
+            <div class="lang-controls">
+              <label for="selSourceLang" style="font-size:0.85rem; color:var(--text-secondary);">من:</label>
+              <select id="selSourceLang">
+                <option value="auto">تحديد تلقائي للغة (Auto Detect)</option>
+                <option value="en">الإنجليزية (English)</option>
+                <option value="ar">العربية (Arabic)</option>
+              </select>
+
+              <button class="btn btn-sm" id="btnSwapLangs" title="تبديل اتجاه الترجمة">⇄ تبديل الاتجاه</button>
+
+              <label for="selTargetLang" style="font-size:0.85rem; color:var(--text-secondary);">إلى:</label>
+              <select id="selTargetLang">
+                <option value="ar">العربية (Arabic)</option>
+                <option value="en">الإنجليزية (English)</option>
+              </select>
+
+              <span class="badge" id="detectedLangBadge">اللغة المكتشفة: تلقائي</span>
+            </div>
+
+            <div class="toolbar-group">
+              <button class="btn btn-sm" id="btnSampleEnSent">مثال إنجليزي</button>
+              <button class="btn btn-sm" id="btnSampleArSent">مثال عربي</button>
+              <button class="btn btn-sm" id="btnSampleLongPara">فقرة تقنية طويلة</button>
+              <button class="btn btn-sm" id="btnSampleMixed">نص مختلط</button>
+            </div>
+          </div>
+
+          <div class="translator-grid">
+            <!-- Source Input Box with Live Autocomplete -->
+            <div class="pane-box">
+              <div class="autocomplete-wrapper">
+                <textarea id="txtSourceInput" class="pane-textarea" placeholder="اكتب كلمة، عبارة، جملة، أو فقرة كاملة بالعربية أو الإنجليزية... (تظهر الاقتراحات تلقائياً أثناء الكتابة)"></textarea>
+                <div id="transAutocompleteBox" class="autocomplete-dropdown" role="listbox"></div>
+              </div>
+
+              <div class="pane-footer">
+                <div class="toolbar-group">
+                  <button class="btn btn-primary" id="btnTranslateNow">⚡ ترجمة السياق</button>
+                  <button class="btn btn-danger btn-sm" id="btnCancelTrans" style="display:none;">إلغاء العملية</button>
+                  <button class="btn btn-sm" id="btnPasteSource" title="لصق النص من الحافظة">📋 لصق</button>
+                  <button class="btn btn-sm" id="btnClearSource" title="مسح النص">🗑️ مسح</button>
+                  <button class="btn btn-sm" id="btnSpeakSource" title="الاستماع للنص الأصلي">🔊 نطق الأصل</button>
+                  <button class="btn btn-sm" id="btnSpeakSourceSlow" title="النطق البطيء للمتعلمين">🐢 بطيء</button>
+                </div>
+                <div id="sourceCounters">0 كلمة | 0 حرف</div>
+              </div>
+            </div>
+
+            <!-- Target Output Box -->
+            <div class="pane-box">
+              <textarea id="txtTargetOutput" class="pane-textarea" placeholder="ستظهر الترجمة السياقية والعصبية هنا... (يمكنك أيضاً تعديلها والضغط على زر «حفظ في القاموس المحلي» ليتعلمها البرنامج دائماً)"></textarea>
+
+              <div id="transProgressWrap" style="display:none; margin:6px 0;">
+                <div style="font-size:0.78rem; color:var(--accent-primary);">جاري معالجة الفقرات الطويلة...</div>
+                <div class="progress-bar-wrap"><div id="transProgressBar" class="progress-bar-fill"></div></div>
+              </div>
+
+              <div class="pane-footer">
+                <div class="toolbar-group">
+                  <button class="btn btn-success btn-sm" id="btnLearnSaveToDict" title="حفظ هذه الكلمة أو الجملة وترجمتها المعروضة في القاموس المحلي الدائم">🧠 حفظ في القاموس المحلي</button>
+                  <button class="btn btn-sm" id="btnCopyTranslation" title="نسخ النتيجة">📄 نسخ</button>
+                  <button class="btn btn-sm" id="btnSpeakTarget" title="الاستماع للترجمة">🔊 نطق الترجمة</button>
+                  <button class="btn btn-sm" id="btnSaveTransFav" title="حفظ النتيجة في المفضلة">★ مفضلة</button>
+                  <button class="btn btn-sm" id="btnToggleTransDetails" title="عرض تفاصيل الترجمة والمقارنة الحرفية">🔍 تفاصيل</button>
+                  <button class="btn btn-primary btn-sm" id="btnOnlineVerify" title="ترجمة عصبية حية عبر الإنترنت مع التعلم التلقائي">🌐 ترجمة عصبية حية</button>
+                </div>
+                <div>
+                  <span class="badge badge-verified" id="transEngineBadge">محلي (Offline)</span>
+                  <span id="transLatencyBadge" style="margin-inline-start:6px;">0.0 ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison & Contextual Details Card -->
+        <div class="card" id="cardTranslationDetails">
+          <div class="card-header">
+            <div class="card-title">🔬 المقارنة بين الترجمة الطبيعية والحرفية وتحليل السياق</div>
+            <span class="badge" id="comparisonStatusBadge">وضع المقارنة السياقية مفعّل</span>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-box">
+              <h4>✨ الترجمة الطبيعية السياقية (Natural Contextual)</h4>
+              <div id="detailNaturalText" style="font-weight:700; color:var(--emerald);">—</div>
+            </div>
+            <div class="info-box">
+              <h4>🧱 الترجمة الحرفية البنيوية (Literal Word-by-Word Gloss)</h4>
+              <div id="detailLiteralText" style="color:var(--text-primary);">—</div>
+            </div>
+            <div class="info-box">
+              <h4>🔄 ترجمات بديلة محتملة (Alternative Renderings)</h4>
+              <div id="detailAlternativesText" style="color:var(--text-secondary);">—</div>
+            </div>
+            <div class="info-box">
+              <h4>🛡️ أسماء العلم والاختصارات والكلمات غير المؤكدة</h4>
+              <div id="detailUncertainTerms" class="chip-list">—</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <h4 style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:6px;">تفكيك الكلمات والعبارات الاصطلاحية في الجملة (انقر على أي كلمة لفتحها في القاموس):</h4>
+            <div id="detailTokenBreakdown" class="chip-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           2. SECTION: COMPREHENSIVE BILINGUAL DICTIONARY
+           ================================================================= -->
+      <section id="sec-dictionary" class="page-section">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">📖 القاموس المحلي الشامل (إنجليزي ↔ عربي) — متعدد المعاني والسياقات</div>
+            <div class="toolbar-group">
+              <span style="font-size:0.82rem; color:var(--text-secondary);">كلمات متعددة المعاني للتجربة السريعة:</span>
+              <button class="chip dict-quick-word" data-word="run">run</button>
+              <button class="chip dict-quick-word" data-word="bank">bank</button>
+              <button class="chip dict-quick-word" data-word="set">set</button>
+              <button class="chip dict-quick-word" data-word="light">light</button>
+              <button class="chip dict-quick-word" data-word="right">right</button>
+              <button class="chip dict-quick-word" data-word="system">system</button>
+              <button class="chip dict-quick-word" data-word="charge">charge</button>
+              <button class="chip dict-quick-word" data-word="field">field</button>
+              <button class="chip dict-quick-word" data-word="عين">عين</button>
+              <button class="chip dict-quick-word" data-word="حكم">حكم</button>
+              <button class="chip dict-quick-word" data-word="عقد">عقد</button>
+              <button class="chip dict-quick-word" data-word="algorthm" title="تجربة البحث التقريبي عند وجود خطأ إملائي">algorthm (خطأ إملائي)</button>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div class="autocomplete-wrapper" style="flex:1;">
+              <input type="text" id="txtDictSearch" style="width:100%; font-size:1.05rem;" placeholder="ابحث عن أي كلمة إنجليزية أو عربية، أو جذر، أو تصريف فعل، أو كلمة بها خطأ إملائي..." />
+              <div id="dictAutocompleteBox" class="autocomplete-dropdown" role="listbox"></div>
+            </div>
+            <button class="btn btn-primary" id="btnDictSearch">🔍 بحث في القاموس</button>
+          </div>
+        </div>
+
+        <!-- Dictionary Entry Full Result View -->
+        <div id="dictResultContainer" class="card">
+          <div id="dictEntryContent">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           3. SECTION: TRANSLATION & SEARCH HISTORY
+           ================================================================= -->
+      <section id="sec-history" class="page-section">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🕒 سجل عمليات البحث والترجمة المحفوظة محلياً</div>
+            <button class="btn btn-danger btn-sm" id="btnClearHistory">🗑️ مسح السجل بالكامل</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>النص الأصلي</th>
+                  <th>الترجمة / النتيجة</th>
+                  <th>الاتجاه</th>
+                  <th>المحرك المستخدم</th>
+                  <th>الزمن</th>
+                  <th>إجراء</th>
+                </tr>
+              </thead>
+              <tbody id="historyTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           4. SECTION: FAVORITE WORDS & SAVED ITEMS
+           ================================================================= -->
+      <section id="sec-favorites" class="page-section">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">★ الكلمات والترجمات المفضلة</div>
+            <div class="toolbar-group">
+              <input type="text" id="txtFavQuickWord" placeholder="الكلمة أو العبارة..." />
+              <input type="text" id="txtFavQuickMeaning" placeholder="المعنى العربي..." />
+              <input type="text" id="txtFavQuickNote" placeholder="ملاحظة شخصية..." />
+              <select id="selFavGroup">
+                <option value="عام / General">عام / General</option>
+                <option value="المفردات الأساسية / Core Vocabulary">المفردات الأساسية</option>
+                <option value="مصطلحات تقنية وهندسية / Tech & Engineering">مصطلحات تقنية وهندسية</option>
+                <option value="مصطلحات طبية وعلمية / Medical & Science">مصطلحات طبية وعلمية</option>
+              </select>
+              <button class="btn btn-primary btn-sm" id="btnAddFavManual">+ إضافة للمفضلة</button>
+            </div>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>الكلمة / النص</th>
+                  <th>المقابل العربي</th>
+                  <th>المجموعة</th>
+                  <th>مستوى الصعوبة</th>
+                  <th>ملاحظة شخصية</th>
+                  <th>إجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="favoritesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           5. SECTION: STUDENT LEARNING & SPACED REPETITION (SRS)
+           ================================================================= -->
+      <section id="sec-learning" class="page-section">
+        <div class="translator-grid">
+          <!-- Interactive SRS Flashcard Deck -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">🎓 مراجعة الكلمات بالتكرار المتباعد (Spaced Repetition SM-2)</div>
+              <span class="badge" id="srsDeckCounter">0 بطاقة</span>
+            </div>
+
+            <div class="flashcard-stage" id="srsFlashcardStage">
+              <div class="badge" id="srsCardGroupBadge">المجموعة</div>
+              <div class="flashcard-word" id="srsCardFrontWord">algorithm</div>
+              <div style="font-size:0.9rem; color:var(--text-secondary);">حاول تذكر المعنى قبل إظهار الإجابة</div>
+
+              <div id="srsCardBackArea" style="display:none; width:100%; border-top:1px solid var(--border-color); padding-top:14px;">
+                <div class="flashcard-answer" id="srsCardBackMeaning">خَوَارِزْمِيَّة</div>
+                <div id="srsCardBackExplanation" style="margin-top:6px; color:var(--text-secondary);"></div>
+                <div id="srsCardBackExample" style="margin-top:6px; font-style:italic; color:var(--amber);"></div>
+                <div id="srsCardBackNote" style="margin-top:6px; font-size:0.82rem; color:var(--accent-primary);"></div>
+              </div>
+
+              <div class="toolbar-group" style="margin-top:12px;">
+                <button class="btn btn-primary" id="btnSrsShowAnswer">👁️ إظهار المعنى بعد المحاولة</button>
+                <button class="btn btn-sm" id="btnSrsSpeakWord">🔊 استماع للنطق</button>
+              </div>
+
+              <div class="toolbar-group" id="srsGradeButtons" style="display:none; margin-top:8px;">
+                <button class="btn btn-danger btn-sm srs-grade-btn" data-grade="2">صعب (مراجعة غداً)</button>
+                <button class="btn btn-sm srs-grade-btn" data-grade="4">متوسط (+4 أيام)</button>
+                <button class="btn btn-success btn-sm srs-grade-btn" data-grade="5">سهل ومتقن (مضاعفة الفترة)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group Management, Export/Import & Text Word Frequency Extractor -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">🛠️ أدوات الطالب: المجموعات، التصدير، واستخراج كلمات النصوص</div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div class="info-box">
+                <h4>📁 إنشاء مجموعة كلمات جديدة</h4>
+                <div style="display:flex; gap:8px; margin-top:6px;">
+                  <input type="text" id="txtNewGroupName" style="flex:1;" placeholder="اسم المجموعة (مثال: مفردات الذكاء الاصطناعي)..." />
+                  <button class="btn btn-primary btn-sm" id="btnCreateGroup">إنشاء مجموعة</button>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <h4>📤 تصدير واستيراد قوائم الكلمات (JSON / CSV)</h4>
+                <div class="toolbar-group" style="margin-top:6px;">
+                  <button class="btn btn-sm" id="btnExportJson">تصدير JSON</button>
+                  <button class="btn btn-sm" id="btnExportCsv">تصدير CSV</button>
+                  <button class="btn btn-sm" id="btnImportSampleList">استيراد قائمة كلمات جاهزة</button>
+                </div>
+                <textarea id="txtExportImportArea" style="width:100%; height:85px; margin-top:8px; font-size:0.8rem;" placeholder="بيانات التصدير أو الاستيراد (JSON / CSV)..."></textarea>
+              </div>
+
+              <div class="info-box">
+                <h4>📊 استخراج الكلمات المتكررة من النص الحالي وإنشاء قائمة تعلم</h4>
+                <div class="toolbar-group" style="margin-top:6px;">
+                  <button class="btn btn-primary btn-sm" id="btnAnalyzeCurrentTextFreq">تحليل الكلمات المتكررة في نص الترجمة</button>
+                </div>
+                <div id="wordFreqResultList" class="chip-list" style="margin-top:8px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           6. SECTION: LOCAL OCR (IMAGE & SCANNED PDF TEXT EXTRACTION)
+           ================================================================= -->
+      <section id="sec-ocr" class="page-section">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">📷 الماسح الضوئي الذكي للصور (Windows Built-in OCR + ترجمة مباشرة داخل الصورة نفسها)</div>
+            <div class="toolbar-group">
+              <span class="badge badge-verified" id="ocrEngineModeBadge">✓ محرك Windows.Media.Ocr المدمج + الرؤية العصبية</span>
+              <button class="btn btn-sm" id="btnToggleOcrViewMode">🔄 العرض: الصورتان جنباً إلى جنب (الأصل يمين ⬅ المترجمة يسار)</button>
+              <button class="btn btn-success btn-sm" id="btnDownloadTranslatedImage">💾 حفظ الصورة المترجمة (PNG)</button>
+            </div>
+          </div>
+
+          <!-- Top Upload & Action Bar -->
+          <div class="pane-box" id="ocrDropZone" style="border:2px dashed var(--accent-primary); padding:14px 18px; margin-bottom:16px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+              <div>
+                <div style="font-weight:800; font-size:1rem; color:var(--accent-primary);">🖼️ اختر صورة أو اسحبها وأفلتها هنا أو الصق لقطة شاشة (Ctrl+V)</div>
+                <div style="font-size:0.84rem; color:var(--text-secondary);">
+                  يقوم المحرك باستخراج النصوص مع إحداثياتها الدقيقة ورسم الترجمة العربية مباشرة فوق الصورة نفسها في مكان النص الأصلي!
+                </div>
+              </div>
+              <div class="toolbar-group" style="flex-wrap:wrap; gap:8px;">
+                <input type="file" id="fileOcrInput" accept="image/*" style="display:none;" />
+                <select id="selOcrLang" style="padding:7px 10px; border-radius:8px; background:var(--bg-input); border:1px solid var(--accent-primary); font-weight:700; font-size:0.84rem;" title="اختر لغة النص الموجود داخل الصورة لزيادة الدقة">
+                  <option value="auto">🌐 لغة الصورة: تلقائي (عربي + إنجليزي)</option>
+                  <option value="eng">🇬🇧 نص إنجليزي في الصورة (English OCR)</option>
+                  <option value="ara">🇸🇦 نص عربي في الصورة (Arabic OCR)</option>
+                </select>
+                <button class="btn btn-primary" id="btnSelectOcrFile">📁 اختيار صورة جديدة</button>
+                <button class="btn btn-sm" id="btnClearOcrImage" style="background:#dc2626; color:#fff; border-color:#ef4444;" title="حذف الصورة السابقة وتفريغ النصوص لاختيار صورة أخرى فوراً">🗑️ حذف الصورة السابقة وبياناتها</button>
+                <button class="btn btn-sm" id="btnRunLocalOcrNow" style="background:#0f766e; color:#fff; border-color:#14b8a6;" title="استخراج النص وترجمته محلياً 100% بدون إنترنت">🖥️ مسح وترجمة محلياً (بدون إنترنت)</button>
+                <button class="btn btn-sm" id="btnRunOnlineOcrNow" style="background:#4f46e5; color:#fff; border-color:#6366f1;" title="مسح الصورة وترجمتها عبر الإنترنت للحصول على أفضل صياغة سحابية">🌐 مسح وترجمة عبر الإنترنت (جودة سحابية)</button>
+                <button class="btn btn-sm" id="btnTranslateOcrOnlineOnly" style="background:#0284c7; color:#fff; border-color:#38bdf8;" title="ترجمة النص المستخرج حالياً عبر الإنترنت للحصول على ترجمة أفضل وإعادة رسمها فوق الصورة">✨ تحسين ترجمة الصورة عبر الإنترنت</button>
+                <button class="btn btn-success btn-sm" id="btnRunSampleOcr">⚡ تجربة بطاقة اختبار</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side-by-Side Visual Image Canvas Grid (Right in RTL: Original Image | Left in RTL: Translated In-Place Image) -->
+          <style>
+            .ocr-stage-wrap {
+              position: relative;
+              display: inline-block;
+              max-width: 100%;
+              line-height: 0;
+              border-radius: 8px;
+              overflow: hidden;
+            }
+            .ocr-live-layer {
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              width: 100%; height: 100%;
+              pointer-events: auto;
+              z-index: 5;
+            }
+            .ocr-live-box {
+              position: absolute;
+              box-sizing: border-box;
+              user-select: text !important;
+              -webkit-user-select: text !important;
+              cursor: text;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 2px 4px;
+              border-radius: 4px;
+              transition: background 0.15s ease, box-shadow 0.15s ease;
+              overflow: hidden;
+              line-height: 1.25;
+            }
+            .ocr-live-box-orig {
+              color: transparent;
+              background: rgba(56, 189, 248, 0.06);
+              border: 1px solid rgba(56, 189, 248, 0.55);
+            }
+            .ocr-live-box-orig::selection, .ocr-live-box-orig *::selection {
+              background: rgba(56, 189, 248, 0.45);
+              color: #ffffff;
+            }
+            .ocr-live-box-orig:hover {
+              background: rgba(15, 23, 42, 0.88);
+              color: #38bdf8 !important;
+              box-shadow: 0 0 0 2px #38bdf8;
+              z-index: 20;
+            }
+            .ocr-live-box-trans {
+              color: transparent;
+              background: transparent;
+              border: 1px dashed rgba(16, 185, 129, 0.45);
+            }
+            .ocr-live-box-trans::selection, .ocr-live-box-trans *::selection {
+              background: rgba(16, 185, 129, 0.55);
+              color: #ffffff;
+            }
+            .ocr-live-box-trans:hover {
+              background: rgba(6, 78, 59, 0.94);
+              color: #6ee7b7 !important;
+              box-shadow: 0 0 0 2px #10b981;
+              z-index: 20;
+            }
+            .ocr-copy-pill {
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              background: #2563eb;
+              color: #fff;
+              border: none;
+              border-radius: 4px;
+              font-size: 10px;
+              padding: 1px 5px;
+              cursor: pointer;
+              opacity: 0;
+              transition: opacity 0.15s;
+              z-index: 25;
+              pointer-events: auto;
+            }
+            .ocr-live-box:hover .ocr-copy-pill {
+              opacity: 1;
+            }
+          </style>
+          <div class="translator-grid" id="ocrVisualCanvasGrid" style="margin-bottom:16px;">
+            <div class="pane-box" id="ocrOriginalPane">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+                <strong style="color:var(--accent-primary);">1️⃣ الصورة الأصلية (اليمين — ظلّل النص بالماوس لنسخه مباشرة من الصورة)</strong>
+                <div style="display:flex; gap:6px; align-items:center;">
+                  <span class="badge" id="ocrDetectedLinesBadge">0 أسطر مكتشفة</span>
+                  <button class="btn btn-sm" id="btnCopyFromOrigImage" title="نسخ كل النص الموجود داخل الصورة الأصلية">📋 نسخ نص الصورة</button>
+                </div>
+              </div>
+              <div style="background:#070b14; border-radius:10px; padding:8px; text-align:center; min-height:250px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                <div class="ocr-stage-wrap" id="ocrStageOriginal">
+                  <canvas id="ocrCanvasOriginal" width="760" height="360" style="max-width:100%; height:auto; border-radius:8px; display:block;"></canvas>
+                  <div class="ocr-live-layer" id="ocrLiveLayerOriginal" title="ظلل أي نص بالماوس واضغط Ctrl+C لنسخه مباشرة من الصورة"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pane-box" id="ocrTranslatedPane" style="border-color:var(--emerald);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+                <strong style="color:var(--emerald);">2️⃣ الصورة المترجمة (اليسار — الترجمة مرسومة وقابلة للتحديد والنسخ من الصورة)</strong>
+                <div style="display:flex; gap:6px; align-items:center;">
+                  <span class="badge badge-verified">نص حي قابل للتحديد والنسخ</span>
+                  <button class="btn btn-sm" id="btnCopyFromTransImage" title="نسخ كل الترجمة الموجودة داخل الصورة المترجمة">📋 نسخ ترجمة الصورة</button>
+                </div>
+              </div>
+              <div style="background:#070b14; border-radius:10px; padding:8px; text-align:center; min-height:250px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                <div class="ocr-stage-wrap" id="ocrStageTranslated">
+                  <canvas id="ocrCanvasTranslated" width="760" height="360" style="max-width:100%; height:auto; border-radius:8px; display:block;"></canvas>
+                  <div class="ocr-live-layer" id="ocrLiveLayerTranslated" title="ظلل أي ترجمة بالماوس واضغط Ctrl+C لنسخها مباشرة من الصورة"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editable Text & Translation Boxes below the Visual Canvases -->
+          <div class="translator-grid">
+            <div class="pane-box">
+              <label style="font-size:0.86rem; font-weight:700; margin-bottom:6px; color:var(--accent-primary);">📝 النص المستخرج من الصورة (يمكنك تعديله لإعادة الرسم على الصورة):</label>
+              <textarea id="txtOcrExtracted" class="pane-textarea" style="min-height:100px;" placeholder="سيظهر النص المستخرج من الصورة هنا..."></textarea>
+            </div>
+            <div class="pane-box">
+              <label style="font-size:0.86rem; font-weight:700; margin-bottom:6px; color:var(--emerald);">✨ الترجمة العربية المرسومة فوق الصورة:</label>
+              <textarea id="txtOcrTranslated" class="pane-textarea" style="min-height:100px;" placeholder="الترجمة السياقية للنص المستخرج..."></textarea>
+            </div>
+          </div>
+
+          <div class="pane-footer" style="margin-top:8px;">
+            <div class="toolbar-group">
+              <button class="btn btn-primary btn-sm" id="btnRetranslateOcr">🔄 تحديث الترجمة وإعادة الرسم فوق الصورة</button>
+              <button class="btn btn-sm" id="btnSpeakOcrTranslated">🔊 نطق ترجمة الصورة</button>
+              <button class="btn btn-sm" id="btnSendOcrToMain">↗ فتح في شاشة الترجمة الرئيسية</button>
+            </div>
+            <span id="ocrStatusLabel" style="font-weight:700; color:var(--emerald);">جاهز للمسح الضوئي والترجمة البصرية</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           7. SECTION: LOCAL RESOURCE MANAGER
+           ================================================================= -->
+      <section id="sec-resources" class="page-section">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">📦 مدير الموارد اللغوية والقواميس والنماذج العصبية</div>
+            <span class="badge badge-verified" id="totalResourcesSizeBadge">إجمالي الموارد المثبتة: 14.5 MB</span>
+          </div>
+
+          <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:14px;">
+            يعرض هذا المدير جميع قواعد البيانات والنماذج المحلية وحجمها وترخيصها وحالتها، مع التحقق من سلامة الملفات عبر بصمة <strong>SHA-256</strong> وحماية الملفات الأساسية من الحذف العرضي.
+          </p>
+
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>اسم المورد</th>
+                  <th>الفئة واللغات</th>
+                  <th>الإصدار والحجم</th>
+                  <th>الحالة</th>
+                  <th>المصدر والترخيص</th>
+                  <th>إجراءات التحقق والإدارة</th>
+                </tr>
+              </thead>
+              <tbody id="resourcesTableBody"></tbody>
+            </table>
+          </div>
+
+          <!-- Optional Model Downloader Progress Panel -->
+          <div id="optionalDownloadPanel" class="info-box" style="display:none; margin-top:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong id="downloadPackTitle">جاري التحقق من تنزيل الحزمة الإضافية...</strong>
+              <button class="btn btn-danger btn-sm" id="btnCancelResourceDownload">إيقاف التنزيل</button>
+            </div>
+            <div class="progress-bar-wrap"><div id="downloadPackBar" class="progress-bar-fill"></div></div>
+            <div id="downloadPackStatus" style="font-size:0.82rem; color:var(--text-secondary); margin-top:6px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           8. SECTION: SETTINGS & PRIVACY
+           ================================================================= -->
+      <section id="sec-settings" class="page-section">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">⚙️ لوحة الإعدادات الشاملة والخصوصية</div>
+            <button class="btn btn-primary btn-sm" id="btnSaveSettings">💾 حفظ جميع الإعدادات محلياً</button>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-box">
+              <h4>🌐 اللغة واتجاه الترجمة الافتراضي</h4>
+              <label style="display:block; margin-top:8px; font-size:0.85rem;">اتجاه الترجمة الافتراضي:</label>
+              <select id="setTransDirection" style="width:100%; margin-top:4px;">
+                <option value="auto->ar">تلقائي ← العربية</option>
+                <option value="en->ar">الإنجليزية ← العربية</option>
+                <option value="ar->en">العربية ← الإنجليزية</option>
+              </select>
+              <label style="display:block; margin-top:8px; font-size:0.85rem;">محرك الترجمة الأساسي:</label>
+              <select id="setEngineMode" style="width:100%; margin-top:4px;">
+                <option value="offline_contextual">المحرك السياقي والقاموس المحلي (100% Offline)</option>
+                <option value="offline_neural_onnx">النموذج العصبي المحلي OPUS-MT (عند تثبيت الحزمة)</option>
+              </select>
+            </div>
+
+            <div class="info-box">
+              <h4>⚡ الاختصار العام وإدارة الحافظة الآمنة</h4>
+              <label style="display:block; margin-top:8px; font-size:0.85rem;">اختصار الترجمة السريعة من البرامج الأخرى:</label>
+              <input type="text" id="setGlobalHotkey" value="Ctrl+Shift+T" style="width:100%; margin-top:4px;" />
+              <label style="display:flex; align-items:center; gap:8px; margin-top:10px; font-size:0.85rem;">
+                <input type="checkbox" id="setClipboardEnabled" checked />
+                تفعيل التقاط النص المحدد عند الضغط على الاختصار فقط
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; margin-top:6px; font-size:0.85rem;">
+                <input type="checkbox" id="setRestoreClipboard" checked />
+                حفظ واستعادة محتوى الحافظة السابق تلقائياً
+              </label>
+            </div>
+
+            <div class="info-box">
+              <h4>🔊 إعدادات النطق الصوتي بدون إنترنت (TTS)</h4>
+              <label style="display:block; margin-top:8px; font-size:0.85rem;">اللكنة الإنجليزية المفضلة:</label>
+              <select id="setTtsAccent" style="width:100%; margin-top:4px;">
+                <option value="en-US">الإنجليزية الأمريكية (US - American)</option>
+                <option value="en-GB">الإنجليزية البريطانية (UK - British)</option>
+              </select>
+              <label style="display:block; margin-top:8px; font-size:0.85rem;">سرعة النطق (<span id="lblTtsSpeed">1.0x</span>):</label>
+              <input type="range" id="setTtsRate" min="0.5" max="1.5" step="0.1" value="1.0" style="width:100%; margin-top:4px;" />
+            </div>
+
+            <div class="info-box">
+              <h4>🎨 المظهر وحجم الخط والاقتراحات</h4>
+              <label style="display:block; margin-top:8px; font-size:0.85rem;">حجم الخط:</label>
+              <select id="setFontSize" style="width:100%; margin-top:4px;">
+                <option value="small">صغير (Small)</option>
+                <option value="medium" selected>متوسط (Medium)</option>
+                <option value="large">كبير (Large)</option>
+              </select>
+              <label style="display:flex; align-items:center; gap:8px; margin-top:10px; font-size:0.85rem;">
+                <input type="checkbox" id="setAutocompleteEnabled" checked />
+                تفعيل الإكمال التلقائي أثناء الكتابة
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; margin-top:6px; font-size:0.85rem;">
+                <input type="checkbox" id="setStartupWindows" />
+                تشغيل التطبيق عند بدء Windows (معطل افتراضياً)
+              </label>
+            </div>
+
+            <div class="info-box">
+              <h4>🔒 الخصوصية والاتصال الاختياري بالإنترنت</h4>
+              <label style="display:block; margin-top:8px; font-size:0.85rem;">سياسة الاتصال الخارجي:</label>
+              <select id="setOnlineConsentMode" style="width:100%; margin-top:4px;">
+                <option value="ask_every_time">انتظار موافقة المستخدم في كل مرة (موصى به)</option>
+                <option value="never">عدم الاتصال بالإنترنت مطلقاً (100% Offline Lock)</option>
+              </select>
+              <div style="font-size:0.78rem; color:var(--text-secondary); margin-top:8px;">
+                لا يقرأ التطبيق الحافظة في الخلفية ولا يرسل أي نصوص إلى خوادم خارجية دون إذنك الصريح.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           9. SECTION: ABOUT LINGUADESK PRO & LICENSES (عمل محمد البكير)
+           ================================================================= -->
+      <section id="sec-about" class="page-section">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">ℹ️ عنا وتواصل مع مطور البرنامج (About & Contact)</div>
+            <span class="author-badge">عمل محمد البكير — Mohammed Albukeer</span>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-box" style="border:2px solid var(--accent-primary);">
+              <h4>👨‍💻 مطور ومهندس التطبيق (Developer & System Architect)</h4>
+              <p style="font-size:1rem; line-height:1.85; margin-top:6px;">
+                <strong>الاسم:</strong> محمد البكير — <strong>Mohammed Albukeer</strong><br/>
+                <strong>البريد الإلكتروني للتواصل المباشر:</strong><br/>
+                <a href="mailto:mohammedalbukeer@gmail.com" style="color:var(--accent-primary); font-weight:800; font-size:1.05rem; text-decoration:none;">mohammedalbukeer@gmail.com</a>
+              </p>
+              <div class="toolbar-group" style="margin-top:12px;">
+                <button class="btn btn-primary btn-sm" id="btnCopyDevEmail">📋 نسخ البريد الإلكتروني</button>
+                <a href="mailto:mohammedalbukeer@gmail.com" class="btn btn-success btn-sm" style="text-decoration:none;">📧 إرسال رسالة بريد إلكتروني</a>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>🏆 هوية المشروع وإمكانياته (LinguaDesk Pro v7.0 Single-File Edition)</h4>
+              <p style="font-size:0.92rem; line-height:1.75;">
+                • <strong>حجم المعجم المحلي:</strong> أكثر من <strong>145,935 كلمة ومصطلح واسم علم وعبارة</strong> + محرك التعلّم الذاتي التلقائي من ترجمات الإنترنت.<br/>
+                • <strong>التكامل مع ويندوز:</strong> اختصار عام <code>Ctrl+Shift+T</code> يلتقط النص المحدد من أي برنامج خارجي ويترجمه في نافذة عائمة فوق جميع التطبيقات (Always-On-Top Overlay).<br/>
+                • <strong>ترجمة الصور البصرية (Visual OCR):</strong> استخراج النص عبر محرك ويندوز المدمج ورسم الترجمة فوق الصورة نفسها جنباً إلى جنب.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h4>📦 التنزيل الذكي المتعدد الاتصالات والتثبيت التلقائي</h4>
+              <p style="font-size:0.9rem; line-height:1.75;">
+                يدعم التطبيق مدير تنزيل ذكي يقسم الحزم اللغوية والعصبية إلى عدة اتصالات متوازية (Multi-Connection Chunked Resume) ليستأنف التحميل تلقائياً عند انقطاع الشبكة ويثبتها دون تدخل من المستخدم.
+              </p>
+              <div class="toolbar-group" style="margin-top:10px;">
+                <button class="btn btn-sm" id="btnTriggerAutoSyncPacks">🔄 فحص ومزامنة الحزم الذكية الآن</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Floating Mini-Translator Window (Draggable + Live Auto-Translation + Selection Capture) -->
+  <div id="floatingMiniTranslator" class="floating-mini-translator" role="dialog" aria-label="نافذة الترجمة السريعة العائمة">
+    <div id="floatingHeaderBar" class="floating-drag-header" title="اسحب النافذة بالماوس لتحريكها في أي مكان على الشاشة">
+      <strong style="color:var(--accent-primary); font-size:0.92rem;">✥ ⚡ الترجمة السريعة العائمة (اسحب للتحريك)</strong>
+      <div class="toolbar-group">
+        <button class="btn btn-sm" id="btnSpeakFloating" title="نطق صوتي">🔊 نطق</button>
+        <button class="btn btn-sm" id="btnCloseFloating" title="إغلاق">✕</button>
+      </div>
+    </div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); margin-bottom:6px;">
+      اكتب أي كلمة أو جملة أو حدد أي نص في الصفحة ليُترجم تلقائياً فوراً:
+    </div>
+    <input type="text" id="txtFloatingInput" style="width:100%; margin-bottom:8px;" placeholder="اكتب هنا للترجمة الفورية..." value="ذهب محمد علي إلى الجامعة في صنعاء." />
+    <div id="txtFloatingOutput" style="background:var(--bg-input); padding:10px 12px; border-radius:8px; color:var(--emerald); font-weight:700; min-height:52px; margin-bottom:8px; border:1px solid var(--border-color);">
+      Mohammed Ali went to the university in Sana'a.
+    </div>
+    <div id="txtClipboardStatus" style="font-size:0.75rem; color:var(--amber); margin-bottom:8px;">
+      ✓ تترجم تلقائياً أثناء الكتابة أو عند تحديد أي نص
+    </div>
+    <div class="toolbar-group" style="justify-content:space-between;">
+      <button class="btn btn-primary btn-sm" id="btnRunFloatingTranslate">⚡ ترجمة فورية</button>
+      <button class="btn btn-sm" id="btnCopyFloating">📄 نسخ</button>
+      <button class="btn btn-sm" id="btnOpenFloatingInMain">↗ فتح بالرئيسية</button>
+    </div>
+  </div>
+
+  <script src="js/full_lexicon_db.js"></script>
+  <script src="js/local_ocr_engine.js"></script>
+  <script src="js/bridge.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

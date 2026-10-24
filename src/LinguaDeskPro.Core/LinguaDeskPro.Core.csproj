@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>محمد البكير (Mohammed Al-Bakir)</Authors>
+    <Company>عمل محمد البكير — Mohammed Al-Bakir Engineering</Company>
+    <Product>LinguaDesk Pro — Core Engine</Product>
+    <Version>2.5.0</Version>
+  </PropertyGroup>
+</Project>
