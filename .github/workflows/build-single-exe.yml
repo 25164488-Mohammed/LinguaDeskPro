@@ -17,7 +17,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: 1. Checkout Repository (Pure PowerShell - Zero Node.js Warnings)
+      - name: 1. Checkout Repository
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -103,16 +103,6 @@ jobs:
 
           New-Item -ItemType Directory -Force -Path "dist_artifacts" | Out-Null
           Copy-Item "publish/single-exe/LinguaDeskPro.exe" "dist_artifacts/LinguaDeskPro_v7.0_SingleFile_Portable.exe" -Force
-
-          $csc = "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
-          if (Test-Path $csc) {
-            & $csc /nologo /target:winexe /optimize+ `
-              /win32icon:"ui\assets\linguadesk.ico" `
-              /out:"dist_artifacts\LinguaDeskPro_v7.0_Compact_SingleFile.exe" `
-              /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll `
-              /resource:"src\LinguaDeskPro.SingleExe\EmbeddedPayload.zip",LinguaDeskProHost.EmbeddedPayload.zip `
-              "src\LinguaDeskPro.SingleExe\Program.cs"
-          }
           Get-ChildItem "dist_artifacts" | Format-Table Name, Length
 
       - name: 6. Build All-In-One Single-File Setup Installer (LinguaDeskPro_Setup_v7.0_AllInOne.exe) via Inno Setup
@@ -159,7 +149,7 @@ jobs:
           iscc "LinguaDeskPro_SingleExe_Setup.iss"
           Get-ChildItem "dist_artifacts" | Format-Table Name, Length
 
-      - name: 7. Publish Single-File EXE Directly to GitHub Releases (Zero Node.js Warnings)
+      - name: 7. Publish Single-File EXE Directly to GitHub Releases
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -174,4 +164,3 @@ jobs:
           }
           if ($LASTEXITCODE -ne 0) { exit 1 }
           Write-Host "SUCCESS! Download your Single-File EXE directly from the Releases section of your GitHub repository!"
- 
