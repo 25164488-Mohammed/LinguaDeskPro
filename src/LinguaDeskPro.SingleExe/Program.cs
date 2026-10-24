@@ -834,7 +834,7 @@ namespace LinguaDeskProHost
             }
             string uiHtml = Path.Combine(this.appRootDir, Path.Combine("ui", "index.html"));
             string fileUri = LocalTcpHttpServer.IsRunning
-                ? ("http://127.0.0.1:" + this.serverPort + "/index.html")
+                ? ("http://127.0.0.1:" + this.httpPort + "/index.html")
                 : ("file:///" + uiHtml.Replace("\\", "/").Replace(" ", "%20"));
 
             string[] browsers = new string[] {
